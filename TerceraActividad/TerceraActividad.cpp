@@ -14,7 +14,7 @@ En todo momento mostrar valores
 Elaborar diagrama de flujo.
 */
 #include <iostream>
-int main(){
+int main() {
   std::cout.sync_with_stdio(false);
   unsigned int n = 0;
   int flag = 1;

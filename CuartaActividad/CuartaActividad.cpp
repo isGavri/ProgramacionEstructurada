@@ -21,40 +21,47 @@
 // Declaracion de funciones para uso de diferentes ciclos
 using std::cout;
 
+int prevNum = 1;
+int prevPrevNum = 0;
+int flag = 1;
 void fib_for(int num);
 void fib_while(int num);
 void fib_do_while(int num);
 
 int main() {
-  cout.sync_with_stdio(false);  // Desincronizar stdio con iostream
+  // Desincronizar stdio con iostream
+  cout.sync_with_stdio(false);
+  while (flag == 1) {
+    // Declaracion de variables
+    int zen{};
+    int num{};
 
-  // Declaracion de variables
-  int flag;
-  int num;
+    // Solicita un valor maximo de la serie
+    std::cout << "Ingresa un valor maximo para la serie fibonacci" << std::endl;
+    std::cin >> num;
+    // Pide el ciclo a utilizar
+    cout << "Que ciclo deseas utilizar? \n1: For \n2: While \n3: Do While"
+         << std::endl;
+    std::cin >> zen;
+    std::cout << std::endl;
 
-  // Solicita un valor maximo de la serie
-  std::cout << "Ingresa un valor maximo para la serie fibonacci" << std::endl;
-  std::cin >> num;
-  // Pide el ciclo a utilizar
-  cout << "Que ciclo deseas utilizar? \n1: For \n2: While \n3: Do While"
-       << std::endl;
-  std::cin >> flag;
-  std::cout << std::endl;
-
-  // Switch statment para ejecutar el ciclo requerido
-  switch (flag) {
-  case 1:
-    fib_for(num);
-    break;
-  case 2:
-    fib_while(num);
-    break;
-  case 3:
-    fib_do_while(num);
-    break;
-  default:
-    std::cout << "Opcion invalida" << std::endl;
-    break;
+    // Switch statment para ejecutar el ciclo requerido
+    switch (zen) {
+    case 1:
+      fib_for(num);
+      break;
+    case 2:
+      fib_while(num);
+      break;
+    case 3:
+      fib_do_while(num);
+      break;
+    default:
+      std::cout << "Opcion invalida" << std::endl;
+      break;
+    }
+    std::cout << "Quieres salir del programa? Si: 0 No:1" << std::endl;
+    std::cin >> flag;
   }
   return 0;
 }
@@ -81,8 +88,6 @@ void fib_while(int num) {
   }
 }
 void fib_do_while(int num) {
-  int prevNum = 1;
-  int prevPrevNum = 0;
   int i = 0;
   do {
     std::cout << i << std::endl;
