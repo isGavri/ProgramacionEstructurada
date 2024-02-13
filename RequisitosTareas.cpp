@@ -1,5 +1,5 @@
 /* Copyright (C) 1989 GNU
- * Everyone is permitted to copy and distribute copies
+* Everyone is permitted to copy and distribute copies
 * of this license document, but changing it is not allowed
 */
 /* Presentación 
