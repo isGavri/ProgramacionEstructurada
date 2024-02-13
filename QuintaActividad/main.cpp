@@ -88,7 +88,7 @@ void suma() {
 }
 // Borra elemento seleccionado
 void del() {
-  unsigned int elem;
+  int elem;
   std::cout << "Que elemento desea eliminar?" << std::endl;
   listar();
   std::cin >> elem;
@@ -96,7 +96,7 @@ void del() {
 }
 // Edita elemento seleccionado
 void edit() {
-  unsigned int elem;
+  int elem;
   int newElem;
   std::cout << "Que elemento desea editar?" << std::endl;
   listar();
