@@ -8,6 +8,7 @@ INGENIERIA EN COMPUTACIÓN / 2DO SEMESTRE
 Profesor: Sergio Franco Casillas
 Descripción: Arreglos
 */
+ 
 #include <iostream>
 
 int arr[10];
@@ -19,7 +20,6 @@ void edit();
 void clean();
 
 int main() {
-  std::cout.sync_with_stdio(false);
   bool zen = true;
   std::cout << "Tenemos un arreglo de 10 espacios" << std::endl;
   // Ingreso de datos al arreglo
