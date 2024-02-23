@@ -29,8 +29,6 @@ void fib_while(int num);
 void fib_do_while(int num);
 
 int main() {
-  // Desincronizar stdio con iostream
-  cout.sync_with_stdio(false);
   while (flag == 1) {
     // Declaracion de variables
     int zen{};

@@ -10,7 +10,6 @@ Descripción: Programa para imprimir mis datos
 #include <iostream> //Libreria para inputs y outputs
 
 int main(){
-  std::cout.sync_with_stdio(false); //Tengo problemas con los buffers, y la terminal espera printf antes de los cout, esta funcion los desliga y me deja ejecutar 
   std::cout << "Estefan Gabriel Partida Toala" << std::endl;
   std::cout << "18" << std::endl;
   std::cout << "Tepatitlan" << std::endl;
