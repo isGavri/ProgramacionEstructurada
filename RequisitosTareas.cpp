@@ -1,4 +1,4 @@
-/* Copyright (C) 1989 GNU
+/* 
 *Presentación 
 *Nomre: Estefan Gabriel Partida Toalá
 *Fecha: 6 de Febrero del 2024
