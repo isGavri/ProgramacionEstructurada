@@ -23,7 +23,6 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::vector;
-
 // Declaracion de funciones para el manejo de conjuntos
 void fill(vector<char> &v, int s);
 void print(vector<char> const &v);
@@ -232,8 +231,5 @@ vector<char> dif(vector<char> const &v1, vector<char> const &v2) {
 }
 
 vector<char> comp(vector<char> const &v1, vector<char> const &v2) {
-  vector<char> result;
-  vector<char> un = uni(v1, v2);
-  result = dif(un, v1);
-  return result;
+  return dif(v2, v1);
 }
