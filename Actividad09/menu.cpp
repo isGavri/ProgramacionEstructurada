@@ -12,9 +12,9 @@ void mainMenu();
 void handlingMenu(vector<char> &v1, vector<char> &v2);
 void clearMenu(vector<char> &v1, vector<char> &v2);
 void fillingMenu(vector<char> &v1, vector<char> &v2);
-void listMenu(vector<char> const &v1, vector<char> const &v2);
+void listMenu(vector<char> &v1, vector<char> &v2);
 void editMenu(vector<char> &v1, vector<char> &v2);
-void operationMenu(vector<char> const &v1, vector<char> const &v2);
+void operationMenu(vector<char> &v1, vector<char> &v2);
 
 void mainMenu() {
   vector<char> A;
@@ -33,7 +33,7 @@ void mainMenu() {
 void handlingMenu(vector<char> &v1, vector<char> &v2) {
   int opt;
   cout << "Que deseas hacer con tus conjuntos?\n"
-          "1.Vaciar\t2.Rellenar\t3.Listar\t4.Editar\t5.Operaciones"
+          "1.Vaciar\t2.Rellenar\t3.Listar\t4.Editar\t5.Operaciones\t6.Salir"
        << endl;
   cin >> opt;
   switch (opt) {
@@ -57,6 +57,14 @@ void handlingMenu(vector<char> &v1, vector<char> &v2) {
     operationMenu(v1, v2);
     break;
   }
+  case 6: {
+    cout << "Saliendo del programa..." << endl;
+    exit(1);
+    break;
+  }
+  default: {
+    cout << "Opcion inexsistente" << endl;
+  }
   }
 }
 void clearMenu(vector<char> &v1, vector<char> &v2) {
@@ -79,6 +87,7 @@ void clearMenu(vector<char> &v1, vector<char> &v2) {
   } else {
     cout << "Opcion invalida" << endl;
   }
+  handlingMenu(v1, v2);
 }
 void fillingMenu(vector<char> &v1, vector<char> &v2) {
   v1.clear();
@@ -92,22 +101,35 @@ void fillingMenu(vector<char> &v1, vector<char> &v2) {
   cout << "Cuantos elementos desea agregar al conjunto B?" << endl;
   cin >> sizeB;
   fill(v2, sizeB);
+  handlingMenu(v1, v2);
 }
-void listMenu(vector<char> const &v1, vector<char> const &v2) {
-  char setOpt;
-  cout << "Que conjunto deseas imprimir? (A) (B)" << endl;
-  cin >> setOpt;
-  if (setOpt == 'A') {
-    print(v1);
-  } else if (setOpt == 'B') {
-    print(v2);
+void listMenu(vector<char> &v1, vector<char> &v2) {
+  int opt;
+  cout << "Deseas listar (2)ambos conjuntos o (1)solo uno?" << endl;
+  cin >> opt;
+  if (opt == 1) {
+    char setOpt;
+    cout << "Que conjunto deseas imprimir? (A) (B)" << endl;
+    cin >> setOpt;
+    if (setOpt == 'A') {
+      print(v1);
+    } else if (setOpt == 'B') {
+      print(v2);
+    } else {
+      cout << "Conjunto inexsistente" << endl;
+    }
+  } else if (opt == 2) {
+    printSet(v1, v2);
   } else {
-    cout << "Conjunto inexsistente" << endl;
+    cout << "Opcion invalida" << endl;
   }
+
+  handlingMenu(v1, v2);
 }
 void editMenu(vector<char> &v1, vector<char> &v2) {
   char set;
-  cout << "Que conjunto deseas editar? (A) (B)";
+  cout << "Que conjunto deseas editar? (A) (B)" << endl;
+  ;
   printSet(v1, v2);
   cin >> set;
   if (set == 'A') {
@@ -135,8 +157,9 @@ void editMenu(vector<char> &v1, vector<char> &v2) {
   } else {
     cout << "Conjunto inexsistente" << endl;
   }
+  handlingMenu(v1, v2);
 }
-void operationMenu(vector<char> const &v1, vector<char> const &v2) {
+void operationMenu(vector<char> &v1, vector<char> &v2) {
   int opt;
   cout << "Que operacion deseas realizar\n"
        << "4.Interseccion\t5.Union\t6.Diferencia\t7.Complemento" << endl;
@@ -181,4 +204,5 @@ void operationMenu(vector<char> const &v1, vector<char> const &v2) {
     break;
   }
   }
+  handlingMenu(v1, v2);
 }
