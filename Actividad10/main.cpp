@@ -1,7 +1,7 @@
-/* Copyright (C) 1989 GNU
+/*
  *Presentación
  *Nomre: Estefan Gabriel Partida Toalá
- *Fecha: 21 de Febrero de 2024
+ *Fecha: 8 de Febrero de 2024
  *Programa: main.cpp
  *CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
  *INGENIERIA EN COMPUTACIÓN / 2DO SEMESTRE
@@ -28,6 +28,8 @@ void printSet(int s, int *m, int *ma);
 void suma(int s, int *m, int *ma);
 void resta(int s, int *m, int *ma);
 void mult(int s, int *m, int *ma);
+int *inversa(int s, int *m);
+void division(int s, int *m, int *ma);
 void edit(int s, int i, int j, int *m);
 void del(int s, int i, int j, int *m);
 void clean(int s, int *m);
@@ -35,8 +37,8 @@ void clean(int s, int *m);
 int main() {
   int size{};
   int fillOpt{};
-  int option{};
-  cout << "Indica el tamaño de tus matrices cuadradas, minimo 2 maximo 10"
+  int opt{};
+  cout << "Indica el tamaño de tus matrices cuadradas, minimo 2 maximo 15"
        << endl;
   cin >> size;
   int m[size][size];
@@ -56,9 +58,10 @@ int main() {
   while (zen == 1) {
     cout << "Que operacion deseas realizar?" << endl;
     cout << "0.Suma\t1.Resta\t2.Multiplicacion\n3.Edicion\t4.Borrado\t5."
-            "Vaciado\t6.Listado" << endl;
-    cin >> option;
-    switch (option) {
+            "Vaciado\t6.Listado"
+         << endl;
+    cin >> opt;
+    switch (opt) {
     case 0: {
       suma(size, (int *)m, (int *)ma);
       break;
@@ -168,7 +171,7 @@ void fillAuto(int s, int *m, int *ma) {
   int *ptra;
   std::random_device rd;
   std::mt19937 gen(rd());
-  std::uniform_int_distribution<> rand(-100, 100);
+  std::uniform_int_distribution<> rand(-200, 400);
   for (int i = 0; i < s; i++) {
     ptr = m + i * s;
     for (int j = 0; j < s; j++) {
@@ -236,8 +239,11 @@ void mult(int s, int *m, int *ma) {
   for (int i = 0; i < s; i++) {
     ptr = m + i * s;
     for (int j = 0; j < s; j++) {
-      ptra = ma + j * s;
-      rm[i][j] = ptr[j] * ptra[i];
+      rm[i][j] = 0;
+      for (int k = 0; k < s; k++) {
+        ptra = ma + k * s;
+        rm[i][j] += ptr[k] * ptra[j];
+      }
     }
   }
   print(s, (int *)rm);
@@ -264,3 +270,15 @@ void clean(int s, int *m) {
     }
   }
 }
+void division(int s, int *m, int *ma) { mult(s, m, inversa(s, ma)); }
+int *inversa(int s, int *m) {
+  int res[s][s];
+  int h[s][s];
+  for (int i = 0; i < s; i++) {
+    for (int j = 0; j < s; i++) {
+      h[i][i] = 1;
+    }
+  }
+  return *res;
+}
+bool determ(int s, int *m) {return 0;}

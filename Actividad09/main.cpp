@@ -1,6 +1,5 @@
-/*
-*Presentación
-*Nomre: Estefan Gabriel Partida Toalá
+/*Presentación
+*Nombre: Estefan Gabriel Partida Toalá
 *Fecha: 01 Marzo del 2024
 *Programa: main.cpp
 *CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
