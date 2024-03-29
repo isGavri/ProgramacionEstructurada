@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <iostream>
+#include <unistd.h>
 
 using std::cin;
 using std::cout;
@@ -70,30 +72,93 @@ bool move(int *board, int pilar, int pilarTo, int s) {
   int rtrnvalue = false;
   if (validate_move(board, pilar, pilarTo, s)) {
     rtrnvalue = true;
-    cout << "Movimiento valido" << endl;
     print_board(board, s);
   }
   return rtrnvalue;
 }
 
-int min_moves() {
-  // TODO
-  return min_moves();
+int min_moves(int base, int times) {
+  if (times < 1) {
+    return 1;
+  } else {
+    int val = base;
+    return val * min_moves(base, times - 1);
+  }
 }
 
-bool won() {
-  // TODO
+bool won(int count, int s) {
+  if (count == min_moves(2, s)) {
+    cout << "Has ganado! :)" << endl;
+  } else {
+    cout << "Has perdido! ☹" << endl;
+  }
   return false;
 }
-bool isDone(int *board) {
-  bool rtrnval = false;
-  // TODO
-  return rtrnval;
+
+bool board1(int *brd, int s) {
+  int board[3][s];
+  int *boardPtr;
+  int *brdPtr;
+  for (int i = 0; i < 3; i++) {
+    boardPtr = (int *)board + i * s;
+    for (int j = 0; j < s; j++) {
+      if (i == 1) {
+        boardPtr[j] = j + 1;
+      } else {
+        boardPtr[j] = 0;
+      }
+    }
+  }
+  for (int i = 0; i < 3; i++) {
+    boardPtr = (int *)board + i * s;
+    brdPtr = brd + i * s;
+    for (int j = 0; j < s; j++) {
+      if (!(boardPtr[j] == brdPtr[j])) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+bool board2(int *brd, int s) {
+  int board[3][s];
+  int *boardPtr;
+  int *brdPtr;
+  for (int i = 0; i < 3; i++) {
+    boardPtr = (int *)board + i * s;
+    for (int j = 0; j < s; j++) {
+      if (i == 2) {
+        boardPtr[j] = j + 1;
+      } else {
+        boardPtr[j] = 0;
+      }
+    }
+  }
+  for (int i = 0; i < 3; i++) {
+    boardPtr = (int *)board + i * s;
+    brdPtr = brd + i * s;
+    for (int j = 0; j < s; j++) {
+      if (!(boardPtr[j] == brdPtr[j])) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+bool isDone(int *board, int disc) {
+  if (board1(board, disc)) {
+    return true;
+  }
+  if (board2(board, disc)) {
+    return true;
+  }
+  return false;
 }
 
 void move(int *board, int s) {
   int countMove = 0;
-  while (!isDone(board)) {
+  while (!isDone(board, s)) {
     // Torre de la que se movera
     int pilar = 0;
     cout << "De que torre deseas mover un disco?" << endl;
@@ -104,7 +169,8 @@ void move(int *board, int s) {
     cout << "A que torre deseas moverlo?" << endl;
     cin >> pilarTo;
 
-    while ((pilar > 3 || pilar < 1) || (pilarTo > 3 || pilarTo < 1) || (pilar == pilarTo)) {
+    while ((pilar > 3 || pilar < 1) || (pilarTo > 3 || pilarTo < 1) ||
+           (pilar == pilarTo)) {
       cout << "Pilares invalidos, ingresalos otra vez" << endl;
       print_board(board, s);
       cout << "De que torre deseas mover un disco?" << endl;
@@ -121,7 +187,8 @@ void move(int *board, int s) {
     }
     countMove++;
   }
-  cout << "Haz realizado :" << countMove << " movimientos" << endl;
+  cout << "Haz realizado : " << countMove << " movimientos" << endl;
+  won(countMove, s);
 }
 void board() {
   int disc = 3; // Variable para cantidad de discos
@@ -131,9 +198,9 @@ void board() {
 
   int board[3][disc]; // Variable para almacenar los datos del tablero
   cout << "Iniciando el juego..." << endl;
-
   initialize_board((int *)board,
                    disc); // LLama a la funcion de inicializar el tablero
+  sleep(1);
 
   cout << "    Tablero inicial    " << endl;
 
@@ -150,31 +217,39 @@ void print_rules() {
           "juego!"
        << endl;
 
+  sleep(3);
   cout << "El juego de las torres de Hanoi se trata de llevar todos los discos "
           "de un pilar hacia uno de los pilaes vacantes"
        << endl;
 
+  sleep(3);
   cout << "Esto debe ser realizado sin colocar un disco de mayor valor sobre "
           "uno de menor"
        << endl;
 
+  sleep(3);
   cout << "El valor de cada disco sera representado por un numero, mientras "
           "mayor el numero, mayor el valor"
        << endl;
 
+  sleep(3);
   cout << "Solo es permitido mover el disco de arriba de cada torre" << endl;
 
+  sleep(3);
   cout << "Cada movimiento invalido contara como un movimiento hecho, esto en "
           "forma de penalizacion, cuidado con tus movimientos!"
        << endl;
 
+  sleep(3);
   cout << "Ganas el juego si consigues realizarlo en la menor cantidad de "
           "movimientos posibles"
        << endl;
+  sleep(2);
 }
 void start_game() {
 
   int opt = 1; // Variable para la opcion de muestra de reglas
+  //
 
   cout << "Quieres leer las reglas?\n1.Si 2.No" << endl;
   cin >> opt;
