@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 #include <unistd.h>
 
@@ -87,7 +86,7 @@ int min_moves(int base, int times) {
 }
 
 bool won(int count, int s) {
-  if (count == min_moves(2, s)) {
+  if (count == (min_moves(2, s))-1) {
     cout << "Has ganado! :)" << endl;
   } else {
     cout << "Has perdido! ☹" << endl;
@@ -191,7 +190,7 @@ void move(int *board, int s) {
   won(countMove, s);
 }
 void board() {
-  int disc = 3; // Variable para cantidad de discos
+  int disc; // Variable para cantidad de discos
 
   cout << "Cuantos discos deseas utilizar? 3-8" << endl;
   cin >> disc;

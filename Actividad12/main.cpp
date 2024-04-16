@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
   if (opt == 1) {
     start_game();
   } else {
-    cout << "☹";
+    cout << "☹\n";
   }
   return 0;
 }
