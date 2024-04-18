@@ -56,8 +56,10 @@ int next_try(int a) {
   return error;
 }
 int main(int argc, char *argv[]) {
+  //Copiado de stackoverflow
   srand(time(NULL));
   int nRandonNumber = rand() % (10) + 1;
+
   word = banco[nRandonNumber];
 
   printf("\n### ----- Bienvenido al juego del ahorcado!   ----- ###\n\n");
@@ -74,9 +76,9 @@ int main(int argc, char *argv[]) {
     printf("Es en mayusculas, bobo\n\n");
   } else if (opt != 'S') {
     printf(">:(\n");
-    exit(1);
+    exit(0);
   }
-  printf("\n### ----- Buena suerte!  ----- ###\n");
+  printf("\n### ----- Buena suerte! ----- ###\n");
   sleep(2);
   int move_count = 0;
   while (move_count < 10 && !equals()) {
