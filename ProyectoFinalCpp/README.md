@@ -40,7 +40,7 @@ Opcion:
 Este espera por input que determinara la continuación del programa, las posibilidades son las siguentes:
 - [Menu de modificacion de registros](#Modificacion-de-registros)
 - [Menu de listado de registros](#Listado-de-registros) 
-- [Confirmacion de borrado de la  base de datos](#Eliminar todos los registros)
+- [Confirmacion de borrado de la  base de datos](#Eliminar-todos-los-registros)
 - [Salir](#Salir)
 ### Modificacion de registros
 Al seleccionar esta opcion te encuentras con el siguente menu:
