@@ -28,7 +28,7 @@ char *get_line() {
       }
       line = linep + (line - linep);
     }
-    if ((*line++ = c) == '\n') {
+    if ((*line++ = c) == EOF) {
       break;
     }
   }
