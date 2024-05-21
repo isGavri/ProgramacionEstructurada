@@ -65,8 +65,6 @@ Ingrese el grupo del estudiante: A
 
 ```
 
-^d0e19e
-
 ##### Datos de familiar
 ```
 *** Datos de familiar ***
@@ -84,7 +82,7 @@ Añadir otra materia (a) Terminar el registro (C):
 Podrás añadir cuantas materias desees y terminar el registro cuando quieras.
 #### Modificar registro
 Al seleccionar esta opcion se listarán todos los registros en la base de datos y te dará opción a ingresar el ID del registro que deseas modificar o a filtar.
-==Ver seccion de listado para conocer las opciones de [filtrado](#Listado-de-registros)==
+<span style="background-color: #2c333d">Ver seccion de listado para conocer las opciones de [filtrado](#Listado-de-registros)</span>
 
 ^0331a8
 ```
