@@ -2,6 +2,7 @@
 
 **Descipcion del programa**: Una institución educativa universitaria de prestigio desea tener un programa donde tenga el registro de sus estudiantes, datos de contacto de sus familiares y el registro de calificaciones de cinco materias.
 ## Requerimientos 
+**Nota**: si ingresas un caracter no numerico cuando se te pide una entrada de datos numerica resultará en un fallo en el programa. Por bobo y no usar las cosas como se deben :)
 - ### Consulta de datos
 	- Individual
 	- Grupal
