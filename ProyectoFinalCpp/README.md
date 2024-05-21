@@ -38,10 +38,10 @@ Inicio del registro de alumnos
 Opcion: 
 ```
 Este espera por input que determinara la continuación del programa, las posibilidades son las siguentes:
-- [[#Modificacion de registros | Menu de modificacion de registros]]
-- [[#Listado de registros | Menu de listado de registros]]
-- [[#Eliminar todos los registros | Confirmacion de borrado de la  base de datos]]
-- [[#Salir]]
+- [Menu de modificacion de registros](#Modificacion-de-registros)
+- [Menu de listado de registros](#Listado-de-registros) 
+- [Confirmacion de borrado de la  base de datos](#Eliminar todos los registros)
+- [Salir](#Salir)
 ### Modificacion de registros
 Al seleccionar esta opcion te encuentras con el siguente menu:
 ```
@@ -51,9 +51,9 @@ Al seleccionar esta opcion te encuentras con el siguente menu:
 (B) Dar de baja a un alumno
 ```
 Espera por le input y te redirigé al siguiente menu,  las opciones son las siguientes:
-- [[#Dar de alta]]
-- [[#Modificar registro]]
-- [[#Dar de baja]]
+- [Dar de alta](#Dar-de-alta)
+- [Modificar registro](#Modificar-registro)
+- [Dar de baja](#Dar-de-baja)
 #### Dar de alta
 Al seleccionar esta opcion te encontrarás con tres menús que cuentan con varias prompts esperando algun input
 ##### Datos del estudiante
@@ -84,7 +84,9 @@ Añadir otra materia (a) Terminar el registro (C):
 Podrás añadir cuantas materias desees y terminar el registro cuando quieras.
 #### Modificar registro
 Al seleccionar esta opcion se listarán todos los registros en la base de datos y te dará opción a ingresar el ID del registro que deseas modificar o a filtar.
-==Ver seccion de listado para conocer las opciones de [[#Listado de registros |filtrado]]==
+==Ver seccion de listado para conocer las opciones de [filtrado](#Listado-de-registros)==
+
+^0331a8
 ```
 *** --- Datos del estudiante --- ***
 - ID del estudiante: 1
@@ -117,12 +119,10 @@ Calculo: 100.00
 
 ```
 
-^0331a8
-
-Después de ingresar el ID serás presentado con [[#Dar de alta|este menú]]
+Después de ingresar el ID serás presentado con [este menú](#Dar-de-alta)
 Si ingresas una opcion invalida te forzará a ingresar el ID.
 #### Dar de baja
-Al ingresar  esta opción serás presentado con el mismo [[#^0331a8|menú]] y opciones que en [[#Modificar registro|modificar registro]].
+Al ingresar  esta opción serás presentado con el mismo [menu](#^0331a8) y opciones que en [modificar](#Modificar-registro).
 ### Listado de registros
 Al seleccionar esta opción te encuentras con el siguiente menú:
 ```

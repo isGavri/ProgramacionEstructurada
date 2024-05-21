@@ -2,7 +2,6 @@
 
 all: main.cpp
 	@clang++ -Wall -Werror --debug main.cpp -o main -lmariadbcpp
-	@clang++ -S main.cpp
 
 run: all main
 	@./main

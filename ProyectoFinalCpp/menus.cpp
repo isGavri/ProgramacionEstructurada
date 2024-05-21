@@ -181,6 +181,7 @@ void list_by_group_menu() {
          "estudiantes\nGrupo: ");
   std::string grupo = get_line(10);
   list_by_group(grupo);
+  printf("Presiona enter para continuar: ");
 }
 
 //  Menu de listado por id
