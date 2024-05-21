@@ -5,6 +5,9 @@
 
 void list_by_id(int id);
 void insert(Student *new_student);
+
+// Funcion para obtener conexion a la base de datos
+
 std::unique_ptr<sql::Connection> get_conection() {
   try {
     sql::SQLString url(
