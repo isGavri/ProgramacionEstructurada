@@ -135,6 +135,7 @@ Opcion:
 Espera por tu input y muestra los registros o un nuevo menú, las  opciones son:
 #### Listado general
 Al seleccionar esta opcion simplemente lista todos los registros y espera por un ENTER para continuar. (Si ingresas cualquier caracter el programa se romperá)
+Si al ejecutar un listado no muestra ningun resultado significa que no hay registros que cumplan dichos requisitos.
 ```
 *** --- Datos del estudiante --- ***
 - ID del estudiante: 1
