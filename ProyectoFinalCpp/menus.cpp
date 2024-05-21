@@ -62,6 +62,9 @@ void fill_student_data(int id) {
 // Menu para crear un nuevo registro
 
 void fill_student_data() {
+  printf("ID y calificaciones son inputs numericas\n");
+  wait;
+  wait;
   system("clear");
   printf("*** Datos del estudiante ***\n"
          "Ingrese el nombre del estudiante: ");
